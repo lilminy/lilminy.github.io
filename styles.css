@@ -63,6 +63,8 @@ body {
 .page.active {
     display: block;
 }
+.page.notactive {
+    display: none;
 
 /* Fade in animation */
 @keyframes fadeIn {
