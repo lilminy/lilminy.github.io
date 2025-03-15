@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Page title -->
-    <title>♡ lilminy ♡</title>
+    <title>lily ♡</title>
     
     <!-- Import Quicksand font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Import specific Lucide icons we need instead of the entire library -->
-    <script src="https://unpkg.com/@lucide/web/dist/umd/lucide.min.js"></script>
+    <!-- Import Lucide icons via CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     
     <!-- Link to our stylesheet -->
     <link rel="stylesheet" href="styles.css">
@@ -20,96 +20,59 @@
 <body>
     <!-- Main container for the entire page -->
     <div class="container">
-
-        <!-- Home page content -->
-        <div id="home">
-            <!-- Profile section containing image and bio -->
-            <div class="profile">
-                <img 
-                    src="https://i.pinimg.com/736x/74/a7/db/74a7db857de0f995fa7ceecf34968908.jpg"
-                    alt="Profile"
-                    class="profile-image"
-                >
-                
-                <!-- Name and bio text -->
-                <h1>lilminy</h1>
-                <p class="bio">♡ she/her/he ♡ bigender ♡ gamer & introvert</p>
-                <p class="bio">Haii, I'm lilminy, I love lying in bed under a warm blanket on a foggy winter's day.<br>My favorite song is Sailor Song from Gigi Perez.</p>
-            </div>
-        </div>
-
-        <!-- Links page content -->
-        <div id="links">
+        <!-- Profile section containing image and bio -->
+        <div class="profile">
+            <!-- Profile image with pink border -->
+            <img 
+                src="https://files.catbox.moe/1gq6tt.jpg"
+                alt="Profile"
+                class="profile-image"
+            >
+            
+            <!-- Name and bio text -->
+            <h1>lily</h1>
+            <p class="bio">♡ she/her ♡ 21 ♡ artist & developer</p>
+            
+            <!-- Social links section -->
             <div class="links">
                 <!-- GitHub link -->
                 <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="link-card">
                     <span class="link-content">
-                        <i icon-name="github"></i>
+                        <i data-lucide="github"></i>
                         <span>Github</span>
                     </span>
-                    <i icon-name="external-link" class="external-link"></i>
+                    <i data-lucide="external-link" class="external-link"></i>
                 </a>
 
                 <!-- Twitter link -->
                 <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="link-card">
                     <span class="link-content">
-                        <i icon-name="twitter"></i>
+                        <i data-lucide="twitter"></i>
                         <span>Twitter</span>
                     </span>
-                    <i icon-name="external-link" class="external-link"></i>
+                    <i data-lucide="external-link" class="external-link"></i>
                 </a>
 
-                <!-- Pronouns.page link -->
-                <a href="https://pronouns.page" target="_blank" rel="noopener noreferrer" class="link-card">
+                <!-- Instagram link -->
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="link-card">
                     <span class="link-content">
-                        <i icon-name="user"></i>
-                        <span>Pronouns</span>
+                        <i data-lucide="instagram"></i>
+                        <span>Instagram</span>
                     </span>
-                    <i icon-name="external-link" class="external-link"></i>
-                </a>
-
-                <!-- NameMC link -->
-                <a href="https://namemc.com" target="_blank" rel="noopener noreferrer" class="link-card">
-                    <span class="link-content">
-                        <i icon-name="gamepad-2"></i>
-                        <span>NameMC</span>
-                    </span>
-                    <i icon-name="external-link" class="external-link"></i>
+                    <i data-lucide="external-link" class="external-link"></i>
                 </a>
             </div>
         </div>
 
         <!-- Footer section -->
         <footer>
-            ♡ made with love ♡
+            ♡ made with love
         </footer>
     </div>
 
-    <!-- Initialize Lucide icons and handle navigation -->
+    <!-- Initialize Lucide icons -->
     <script>
-        // Initialize icons once the DOM is loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-            
-            // Add click handlers for navigation
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.addEventListener('click', () => {
-                    const pageId = tab.dataset.page;
-                    
-                    // Hide all pages and deactivate all tabs
-                    document.querySelectorAll('.page').forEach(page => {
-                        page.classList.remove('active');
-                    });
-                    document.querySelectorAll('.tab').forEach(t => {
-                        t.classList.remove('active');
-                    });
-                    
-                    // Show selected page and activate selected tab
-                    document.getElementById(pageId).classList.add('active');
-                    tab.classList.add('active');
-                });
-            });
-        });
+        lucide.createIcons();
     </script>
 </body>
 </html>
