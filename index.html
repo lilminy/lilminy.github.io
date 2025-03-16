@@ -19,8 +19,9 @@
 </head>
 <body>
     <!-- Background Music -->
-    <audio controls autoplay loop>
-          <source src="bg-music.mp3" type="audio/mpeg">
+    <audio id="bgMusic" loop autoplay>
+        <source src="bg-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
     </audio>
 
     <!-- Main container for the entire page -->
@@ -94,9 +95,23 @@
         </footer>
     </div>
 
-    <!-- Initialize Lucide icons -->
+    <!-- Initialize Lucide icons and start music -->
     <script>
         lucide.createIcons();
+        
+        // Force music to play on page load
+        window.addEventListener('load', function() {
+            const bgMusic = document.getElementById('bgMusic');
+            bgMusic.play().catch(function(error) {
+                console.log("Browser prevented autoplay");
+                
+                // Try to play on first user interaction
+                document.addEventListener('click', function playOnFirstClick() {
+                    bgMusic.play();
+                    document.removeEventListener('click', playOnFirstClick);
+                }, { once: true });
+            });
+        });
     </script>
 </body>
 </html>
