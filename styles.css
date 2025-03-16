@@ -14,6 +14,32 @@ body {
     background: rgba(236, 72, 153, 0.3);
 }
 
+/* Audio control button styles */
+.audio-control {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: #d946ef;
+    border: none;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.2s;
+}
+
+.audio-control:hover {
+    background: #ec4899;
+}
+
+.audio-control i {
+    color: white;
+}
+
 /* Main container styles */
 .container {
     min-height: 100vh;
