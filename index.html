@@ -18,8 +18,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Audio Control Button -->
+    <button id="audioControl" class="audio-control">
+        <i data-lucide="volume-2"></i><p>Music</p>
+    </button>
+
     <!-- Background Music -->
-    <audio id="bgMusic" loop autoplay muted>
+    <audio id="bgMusic" loop autoplay>
         <source src="bg-music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
@@ -95,31 +100,25 @@
         </footer>
     </div>
 
-    <!-- Initialize Lucide icons and start music -->
+    <!-- Initialize Lucide icons and audio control -->
     <script>
         lucide.createIcons();
-        
-        // Try multiple approaches to start the music
-        window.addEventListener('DOMContentLoaded', function() {
-            const bgMusic = document.getElementById('bgMusic');
-            
-            // First attempt: unmute and play
-            bgMusic.muted = false;
-            bgMusic.play();
-            
-            // Second attempt: create and play a new Audio object
-            const audioBackup = new Audio('bg-music.mp3');
-            audioBackup.loop = true;
-            audioBackup.play();
-            
-            // Third attempt: try playing on various events
-            const events = ['mousemove', 'scroll', 'touchstart'];
-            const playMusic = function() {
-                bgMusic.muted = false;
+
+        // Audio control functionality
+        const audioControl = document.getElementById('audioControl');
+        const bgMusic = document.getElementById('bgMusic');
+        let isPlaying = true;
+
+        audioControl.addEventListener('click', () => {
+            if (isPlaying) {
+                bgMusic.pause();
+                audioControl.innerHTML = '<i data-lucide="volume-x"></i>';
+            } else {
                 bgMusic.play();
-                events.forEach(event => document.removeEventListener(event, playMusic));
-            };
-            events.forEach(event => document.addEventListener(event, playMusic, { once: true }));
+                audioControl.innerHTML = '<i data-lucide="volume-2"></i>';
+            }
+            isPlaying = !isPlaying;
+            lucide.createIcons();
         });
     </script>
 </body>
