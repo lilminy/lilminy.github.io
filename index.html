@@ -19,7 +19,7 @@
 </head>
 <body>
     <!-- Background Music -->
-    <audio id="bgMusic" loop autoplay>
+    <audio id="bgMusic" loop autoplay muted>
         <source src="bg-music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
@@ -99,18 +99,27 @@
     <script>
         lucide.createIcons();
         
-        // Force music to play on page load
-        window.addEventListener('load', function() {
+        // Try multiple approaches to start the music
+        window.addEventListener('DOMContentLoaded', function() {
             const bgMusic = document.getElementById('bgMusic');
-            bgMusic.play().catch(function(error) {
-                console.log("Browser prevented autoplay");
-                
-                // Try to play on first user interaction
-                document.addEventListener('click', function playOnFirstClick() {
-                    bgMusic.play();
-                    document.removeEventListener('click', playOnFirstClick);
-                }, { once: true });
-            });
+            
+            // First attempt: unmute and play
+            bgMusic.muted = false;
+            bgMusic.play();
+            
+            // Second attempt: create and play a new Audio object
+            const audioBackup = new Audio('bg-music.mp3');
+            audioBackup.loop = true;
+            audioBackup.play();
+            
+            // Third attempt: try playing on various events
+            const events = ['mousemove', 'scroll', 'touchstart'];
+            const playMusic = function() {
+                bgMusic.muted = false;
+                bgMusic.play();
+                events.forEach(event => document.removeEventListener(event, playMusic));
+            };
+            events.forEach(event => document.addEventListener(event, playMusic, { once: true }));
         });
     </script>
 </body>
