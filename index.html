@@ -20,7 +20,7 @@
 <body>
     <!-- Audio Control Button -->
     <button id="audioControl" class="audio-control">
-        <i data-lucide="bell-off"></i>
+        <i data-lucide="power"></i>
     </button>
 
     <!-- Background Music -->
@@ -112,10 +112,10 @@
         audioControl.addEventListener('click', () => {
             if (isPlaying) {
                 bgMusic.pause();
-                audioControl.innerHTML = '<i data-lucide="volume-x"></i>';
+                audioControl.innerHTML = '<i data-lucide="bell-off"></i>';
             } else {
                 bgMusic.play();
-                audioControl.innerHTML = '<i data-lucide="volume-2"></i>';
+                audioControl.innerHTML = '<i data-lucide="bell"></i>';
             }
             isPlaying = !isPlaying;
             lucide.createIcons();
