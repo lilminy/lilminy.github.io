@@ -110,11 +110,33 @@ main {
 /* Home Page */
 .hero {
     text-align: center;
-    padding: 4rem 0;
-    background: linear-gradient(135deg, var(--deep-pink) 0%, var(--purple) 100%);
+    padding: 8rem 0;
+    background-image: url('https://i.pinimg.com/1200x/d5/14/1e/d5141e9a2f6c5e7b908fa342647148b5.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 1rem;
     color: white;
     margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(231, 140, 210, 0.7);
+    z-index: 1;
+}
+
+.hero h1, .hero p {
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero h1 {
