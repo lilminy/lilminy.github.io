@@ -85,12 +85,14 @@ nav {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary);
+    margin-right: auto;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
     gap: 2rem;
+    margin-left: auto;
 }
 
 .nav-links a {
@@ -303,6 +305,11 @@ footer {
 
     .nav-links {
         gap: 1rem;
+        margin-left: 0;
+    }
+
+    .logo {
+        margin-right: 0;
     }
 
     .hero h1 {
