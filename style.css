@@ -206,11 +206,18 @@ main {
 }
 
 /* Projects Page */
+.projects-container, .links-container {
+    min-height: calc(100vh - 12rem);
+    display: flex;
+    flex-direction: column;
+}
+
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-top: 2rem;
+    flex: 1;
 }
 
 .project-card {
@@ -219,6 +226,7 @@ main {
     border-radius: 1rem;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, background-color 0.3s;
+    height: fit-content;
 }
 
 .project-card:hover {
@@ -243,9 +251,10 @@ main {
 /* Links Page */
 .links-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-top: 2rem;
+    flex: 1;
 }
 
 .link-card {
@@ -262,6 +271,7 @@ main {
     flex-direction: column;
     justify-content: center;
     min-height: 120px;
+    height: fit-content;
 }
 
 .link-card:hover {
@@ -313,5 +323,13 @@ footer {
         bottom: 1rem;
         right: 1rem;
         padding: 0.75rem 1.5rem;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .links-grid {
+        grid-template-columns: 1fr;
     }
 }
