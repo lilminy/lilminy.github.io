@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +22,7 @@
         <h1>Connect With Me</h1>
         
         <div class="links-grid">
-            <a href="https://github.com/lilminy" type="_blanc" class="link-card">
+            <a href="https://github.com/lilminy" target="_blank" class="link-card">
                 <h3>GitHub</h3>
                 <p>Check out my code repositories</p>
             </a>
@@ -61,11 +61,16 @@
     </footer>
 
     <script>
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+
         function toggleTheme() {
             const html = document.documentElement;
             const currentTheme = html.getAttribute('data-theme');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
         }
     </script>
 </body>
