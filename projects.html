@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lilminy | Projects</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <div class="logo">lilminy</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="links.html">Links</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="projects-container">
+        <h1>My Projects</h1>
+        
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>My Website</h3>
+                <p>The website you're currently on.</p>
+                <div class="project-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Anomic</h3>
+                <p>The roblox game Anomic in Minecraft</p>
+                <div class="project-tags">
+                    <span>Java</span>
+                    <span>Skript</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <button class="theme-switch" onclick="toggleTheme()">Switch Theme</button>
+
+    <footer>
+        <p>copyright © 2025 lilminy</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+        }
+    </script>
+</body>
+</html>

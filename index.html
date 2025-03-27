@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lilminy | Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <div class="logo">lilminy</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="links.html">Links</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="home-container">
+        <div class="hero">
+            <h1>Welcome to My Website</h1>
+            <p>Developer & Minecraft Builder</p>
+        </div>
+
+        <section class="profile-section">
+            <img src="profile.png" alt="Profile Picture" class="profile-image">
+            <div class="profile-content">
+                <h2>About Me</h2>
+                <p>Hi! I'm a passionate developer who loves creating beautiful and functional web applications. 
+                   When I'm not coding, you can find me training Pokémon or learning about new technologies.</p>
+                <p>Hello! I'm a developer based in germany.<br>I love lying in bed under a warm blanket on a foggy winter's day.<br>My favorite song is Happiest Year from Jaymes Young.</p>
+            </div>
+        </section>
+
+        <section class="skills">
+            <h2>Skills</h2>
+            <div class="skill-grid">
+                <div class="skill-card">HTMT</div>
+                <div class="skill-card">CSS</div>
+                <div class="skill-card">Java</div>
+                <div class="skill-card">C++</div>
+                <div class="skill-card">Skript<br>Minecraft Plugin</div>
+                <div class="skill-card">Axiom</div>
+                <div class="skill-card">FAWE</div>
+                <div class="skill-card">VoxelSniper</div>
+            </div>
+        </section>
+    </main>
+
+    <button class="theme-switch" onclick="toggleTheme()">Switch Theme</button>
+
+    <footer>
+        <p>copyright © 2025 lilminy</p
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+        }
+    </script>
+</body>
+</html>

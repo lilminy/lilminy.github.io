@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lilminy | Links</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <div class="logo">lilminy</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="links.html" class="active">Links</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="links-container">
+        <h1>Connect With Me</h1>
+        
+        <div class="links-grid">
+            <a href="https://github.com/lilminy" type="_blanc" class="link-card">
+                <h3>GitHub</h3>
+                <p>Check out my code repositories</p>
+            </a>
+
+            <a href="https://en.pronouns.page/@lilminy" class="link-card">
+                <h3>Pronouns.page</h3>
+                <p>Pronouns & Words</p>
+            </a>
+
+            <a href="https://youtube.com/@lilmiiny" class="link-card">
+                <h3>YouTube</h3>
+                <p>Check out my YouTube Channel</p>
+            </a>
+
+            <a href="https://namemc.com/profile/lilminy.1" class="link-card">
+                <h3>NameMC</h3>
+                <p>My Minecraft Account</p>
+            </a>
+
+            <a href="https://cake.avris.it/pB3" class="link-card">
+                <h3>ALC</h3>
+                <p>Attraction Layer Cake</p>
+            </a>
+
+            <a href="mailto:minus02minus02@gmail.com" class="link-card">
+                <h3>Email</h3>
+                <p>Email me if needed</p>
+            </a>
+        </div>
+    </main>
+
+    <button class="theme-switch" onclick="toggleTheme()">Switch Theme</button>
+
+    <footer>
+        <p>copyright © 2025 lilminy</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+        }
+    </script>
+</body>
+</html>
