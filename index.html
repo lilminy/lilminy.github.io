@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,7 @@
             <img src="profile.png" alt="Profile Picture" class="profile-image">
             <div class="profile-content">
                 <h2>About Me</h2>
-                <p>I'm a new developer learning Java, HTML, CSS and C++.<br>Currently just learning new Programming Languages.<br>I specialize in web and minecraft plugin development and am still learning so I'm greatfull about every advice.</p></p>
+                <p>I'm a new developer learning Java, HTML, CSS and C++.<br>Currently just learning new Programming Languages.<br>I specialize in web and minecraft plugin development and am still learning so I'm greatfull about every advice.</p>
                 <p>I'm based in germany and I love lying in bed under a warm blanket on a foggy winter's day.<br>My favorite song is Happiest Year from Jaymes Young.</p>
             </div>
         </section>
@@ -36,7 +36,7 @@
         <section class="skills">
             <h2>Skills</h2>
             <div class="skill-grid">
-                <div class="skill-card">HTMT</div>
+                <div class="skill-card">HTML</div>
                 <div class="skill-card">CSS</div>
                 <div class="skill-card">Java</div>
                 <div class="skill-card">C++</div>
@@ -51,15 +51,20 @@
     <button class="theme-switch" onclick="toggleTheme()">Switch Theme</button>
 
     <footer>
-        <p>copyright © 2025 lilminy</p
+        <p>copyright © 2025 lilminy</p>
     </footer>
 
     <script>
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+
         function toggleTheme() {
             const html = document.documentElement;
             const currentTheme = html.getAttribute('data-theme');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
         }
     </script>
 </body>
