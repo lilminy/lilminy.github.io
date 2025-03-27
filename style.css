@@ -29,6 +29,9 @@ body {
     color: var(--text);
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Theme Switcher */
@@ -101,6 +104,7 @@ main {
     max-width: 1200px;
     margin: 6rem auto 2rem;
     padding: 0 1rem;
+    flex: 1;
 }
 
 /* Home Page */
@@ -242,10 +246,10 @@ main {
 footer {
     text-align: center;
     padding: 2rem;
-    margin-top: 4rem;
     background: linear-gradient(135deg, var(--purple) 0%, var(--deep-pink) 100%);
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
     color: white;
+    margin-top: auto;
 }
 
 /* Responsive Design */
