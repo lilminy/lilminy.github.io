@@ -1,5 +1,5 @@
 /* Sylveon-inspired color palette */
-:root {
+:root[data-theme="light"] {
     --primary: #f7b5d3;
     --secondary: #7cc7e8;
     --accent: #88c9a3;
@@ -11,10 +11,16 @@
     --card-bg: white;
 }
 
-[data-theme="dark"] {
+:root[data-theme="dark"] {
     --background: #1a1a1a;
     --text: #ffffff;
     --card-bg: #2a2a2a;
+    --primary: #ff9ecd;
+    --secondary: #7cc7e8;
+    --accent: #88c9a3;
+    --ribbon: #98c3e8;
+    --purple: #e4c1f9;
+    --deep-pink: #ff9ecd;
 }
 
 * {
@@ -146,7 +152,7 @@ main {
 
 .profile-section {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 2rem;
     background-color: var(--card-bg);
     padding: 2rem;
@@ -237,14 +243,14 @@ main {
 /* Links Page */
 .links-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
     margin-top: 2rem;
 }
 
 .link-card {
     background: var(--card-bg);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 1rem;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     text-decoration: none;
@@ -252,6 +258,10 @@ main {
     transition: transform 0.3s, background-color 0.3s;
     text-align: center;
     border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 120px;
 }
 
 .link-card:hover {
