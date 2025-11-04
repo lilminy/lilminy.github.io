@@ -1,136 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <!-- Character encoding and viewport settings for proper rendering -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Page title -->
-    <title>lilminy</title>
-    
-    <!-- Import Quicksand font from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Import Lucide icons via CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Link to our stylesheet -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Entry screen overlay -->
-    <div id="entry-screen" class="entry-screen">
-        <div class="entry-content">
-            <h1 class="entry-title">Mrow <3</h1>
-            <button id="enter-btn" class="enter-button">Click to enter</button>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lilpage</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <a href="/">home</a>
+          <a href="/experience.html">experience</a>
+          <a href="/links.html">contact / links</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="profile-section">
+          <img src="/profile.png" alt="profile" class="profile-image" />
+          <div class="profile-divider"></div>
+          <div class="profile-info">
+            <h1 class="profile-name">miny</h1>
+            <p class="profile-details">she/her - lesbian</p>
+          </div>
+        </section>
+
+        <section class="bio-section">
+          <p>
+            hi! i'm miny. i'm an aspiring digital artist, amateur pianist, and overall lover of music.
+          </p>
+          <p>
+            i mostly spend my time playing minecraft, moderating minehut, playing with friends, or just doing some creative building. however, i also dabble in other things, like discord bots and minecraft development.
+          </p>
+          <p>
+            i don't have any notable projects yet, or forgot about them (?), but i'll surely make some in the future.
+          </p>
+          <p>
+            for information on my experience, check out the <a href="/experience.html">experience</a> page.
+          </p>
+        </section>
+      </main>
     </div>
-
-    <!-- Music toggle button -->
-    <button id="music-toggle" class="music-toggle">
-        <i data-lucide="volume-2" id="music-icon"></i>
-    </button>
-
-    <!-- Hidden audio element -->
-    <audio id="background-music" loop>
-        <source src="music.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-
-    <!-- Main container for the entire page -->
-    <div class="container" id="main-content">
-        <!-- Profile section containing image and bio -->
-        <div class="profile">
-            <!-- Profile image with pink border -->
-            <img 
-                src="pfp.jpg"
-                alt="Profile"
-                class="profile-image"
-            >
-            
-            <!-- Name and bio text -->
-            <h1>lilminy</h1>
-            <p class="bio">♡ she/her ♡ gamer ♡</p>
-            <p class="bio">Haii, I'm lilminy, I love lying in bed under a warm blanket on a foggy winter's day. I'm a minecraft builder who loves to build trees, especially colored trees. I spent a lot of my time on <a href="https://app.minehut.com/">minehut.com</a> in the lobby just chilling with other people.</p>
-            
-            <!-- Social links section -->
-            <div class="links">
-                <!-- YouTube link -->
-                <a href="https://youtube.com/@lilmiiny" target="_blank" rel="noopener noreferrer" class="link-card">
-                    <span class="link-content">
-                        <i data-lucide="youtube"></i>
-                        <span>YouTube</span>
-                    </span>
-                    <i data-lucide="external-link" class="external-link"></i>
-                </a>
-
-                <!-- NameMC link -->
-                <a href="https://namemc.com/profile/lilminy.1" target="_blank" rel="noopener noreferrer" class="link-card">
-                    <span class="link-content">
-                        <i data-lucide="gamepad-2"></i>
-                        <span>NameMC</span>
-                    </span>
-                    <i data-lucide="external-link" class="external-link"></i>
-                </a>
-            </div>
-        </div>
-
-        <!-- Footer section -->
-        <footer>
-            ♡ ♡ ♡
-        </footer>
-    </div>
-
-    <!-- Initialize Lucide icons and handle interactions -->
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-
-        // Get elements
-        const entryScreen = document.getElementById('entry-screen');
-        const enterBtn = document.getElementById('enter-btn');
-        const mainContent = document.getElementById('main-content');
-        const musicToggle = document.getElementById('music-toggle');
-        const backgroundMusic = document.getElementById('background-music');
-        const musicIcon = document.getElementById('music-icon');
-
-        let musicPlaying = false;
-
-        // Handle entry screen
-        enterBtn.addEventListener('click', function() {
-            entryScreen.style.opacity = '0';
-            setTimeout(() => {
-                entryScreen.style.display = 'none';
-                mainContent.style.display = 'flex';
-                // Start music when entering
-                backgroundMusic.play().then(() => {
-                    musicPlaying = true;
-                }).catch(e => {
-                    console.log('Audio autoplay prevented:', e);
-                });
-            }, 500);
-        });
-
-        // Handle music toggle
-        musicToggle.addEventListener('click', function() {
-            if (musicPlaying) {
-                backgroundMusic.pause();
-                musicToggle.innerHTML = '<i data-lucide="volume-x"></i>';
-                lucide.createIcons();
-                musicPlaying = false;
-            } else {
-                backgroundMusic.play().then(() => {
-                    musicToggle.innerHTML = '<i data-lucide="volume-2"></i>';
-                    lucide.createIcons();
-                    musicPlaying = true;
-                }).catch(e => {
-                    console.log('Audio play failed:', e);
-                });
-            }
-        });
-
-        // Set initial volume
-        backgroundMusic.volume = 0.3;
-    </script>
-</body>
+  </body>
 </html>
