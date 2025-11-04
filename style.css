@@ -1,224 +1,264 @@
-/* Reset default styles and set dark background */
+:root {
+  --bg-dark: #2a2a3e;
+  --bg-box: #3a3a4e;
+  --bg-nav: #262631;
+  --text-light: #e0e0e0;
+  --accent-purple: #d8b4f8;
+  --accent-purple-hover: #e9d5ff;
+  --divider-gray: #6b7280;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--text-light);
+  background-color: var(--bg-dark);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    background: #1a1a1a;
-    color: white;
-    font-family: 'Quicksand', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
 }
 
-/* Style text selection */
-::selection {
-    background: rgba(236, 72, 153, 0.3);
-}
-
-/* Entry screen styles */
-.entry-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #1a1a1a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    transition: opacity 0.5s ease;
-}
-
-.entry-content {
-    text-align: center;
-}
-
-.entry-title {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    color: #ec4899;
-}
-
-.enter-button {
-    background: #ec4899;
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 0.75rem;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 1.125rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.enter-button:hover {
-    background: #db2777;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(236, 72, 153, 0.3);
-}
-
-/* Music toggle button styles */
-.music-toggle {
-    position: fixed;
-    top: 1.5rem;
-    left: 1.5rem;
-    width: 3rem;
-    height: 3rem;
-    background: #252525;
-    border: none;
-    border-radius: 50%;
-    color: white;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 100;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.music-toggle:hover {
-    background: #303030;
-    transform: scale(1.1);
-}
-
-.music-toggle i {
-    width: 1.25rem;
-    height: 1.25rem;
-}
-
-/* Main container styles */
 .container {
-    min-height: 100vh;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    padding: 3rem 1rem;
-    padding-top: 5rem;
+  max-width: 900px;
+  width: 100%;
+  background-color: var(--bg-box);
+  border-radius: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Profile section styles */
-.profile {
-    width: 100%;
-    max-width: 36rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+header {
+  background-color: var(--bg-nav);
+  padding: 1rem 1.5rem;
+  margin-bottom: 0;
 }
 
-/* Profile image styles */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 0;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  text-transform: lowercase;
+  transition: color 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+  color: var(--accent-purple);
+  border-bottom-color: var(--accent-purple);
+}
+
+main {
+  padding: 1.5rem 1.5rem;
+}
+
+a {
+  color: var(--accent-purple);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-purple-hover);
+}
+
+.profile-section {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: flex-start;
+}
+
 .profile-image {
-    width: 8rem;
-    height: 8rem;
-    border-radius: 50%;
-    border: 4px solid #ec4899;
-    margin-bottom: 1.5rem;
-    transition: transform 0.3s ease;
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
-.profile-image:hover {
-    transform: scale(1.05);
+.profile-divider {
+  display: none;
 }
 
-/* Name heading styles */
-h1 {
-    font-size: 1.875rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+.profile-info {
+  flex: 1;
 }
 
-/* Bio text styles */
-.bio {
-    color: #9ca3af;
-    text-align: center;
-    margin-bottom: 2rem;
-    max-width: 28rem;
+.profile-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: lowercase;
+  margin-bottom: 0.2rem;
 }
 
-/* Bio link styles */
-.bio a {
-    color: #ec4899;
-    text-decoration: none;
-    transition: color 0.3s ease;
+.profile-details {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+  text-transform: lowercase;
 }
 
-.bio a:hover {
-    color: #db2777;
-    text-decoration: underline;
+.profile-links {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
 }
 
-/* Links container styles */
-.links {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.profile-links a {
+  display: inline-block;
 }
 
-/* Individual link card styles */
-.link-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #252525;
-    padding: 1rem;
-    border-radius: 0.75rem;
-    text-decoration: none;
-    color: white;
-    transition: all 0.3s ease;
+.bio-section {
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  line-height: 1.6;
 }
 
-/* Hover effect for link cards */
-.link-card:hover {
-    background: #303030;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+.bio-section p {
+  margin-bottom: 1rem;
+  text-align: justify;
+  text-transform: lowercase;
+  font-size: 0.9rem;
 }
 
-/* Link content container styles */
-.link-content {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+.bio-section a {
+  text-decoration: underline;
 }
 
-/* Icon styles */
-[data-lucide] {
-    width: 1.25rem;
-    height: 1.25rem;
+.bio-section a:hover {
+  text-decoration: none;
 }
 
-/* External link icon styles */
-.external-link {
-    color: #9ca3af;
-    width: 1rem;
-    height: 1rem;
+.links-grid {
+  display: grid;
+  gap: 1rem;
 }
 
-/* Footer styles */
-footer {
-    margin-top: 3rem;
-    font-size: 0.875rem;
-    color: #6b7280;
+.link-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 1.5rem;
+  align-items: center;
 }
 
-/* Responsive design */
+.link-label {
+  color: var(--accent-purple);
+  font-weight: 500;
+  text-transform: lowercase;
+  font-size: 0.85rem;
+}
+
+.link-value {
+  color: var(--text-light);
+  text-transform: lowercase;
+  font-size: 0.85rem;
+  word-break: break-all;
+}
+
+.link-value a {
+  display: inline;
+}
+
+.experience-section {
+  margin-bottom: 1.5rem;
+}
+
+.experience-title {
+  color: var(--accent-purple);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-transform: lowercase;
+  text-decoration: underline;
+}
+
+.experience-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  align-items: start;
+}
+
+.experience-item-label {
+  color: var(--accent-purple);
+  font-weight: 500;
+  text-transform: lowercase;
+  font-size: 0.85rem;
+}
+
+.experience-item-content {
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
+
+.experience-item-title {
+  text-transform: lowercase;
+  margin-bottom: 0.15rem;
+  font-weight: 500;
+}
+
+.experience-item-details {
+  color: var(--divider-gray);
+  font-size: 0.8rem;
+  text-transform: lowercase;
+}
+
 @media (max-width: 640px) {
-    .entry-title {
-        font-size: 2rem;
-    }
-    
-    .music-toggle {
-        top: 1rem;
-        left: 1rem;
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-    
-    .container {
-        padding-top: 4rem;
-    }
+  .profile-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .profile-divider {
+    width: 12px;
+    height: 12px;
+    margin-top: 0;
+  }
+
+  .profile-links {
+    justify-content: center;
+  }
+
+  .link-item,
+  .experience-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .link-label,
+  .experience-item-label {
+    margin-bottom: 0.25rem;
+  }
+
+  nav {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .bio-section p {
+    text-align: left;
+  }
 }
